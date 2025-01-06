@@ -2,5 +2,5 @@ name = "Tic-tac-toe"
 description = "A simple application to run tic-tac-toe"
 
 [files]
-"./generic tictactoe client.py" = ""
-"./generic tictactoe server.py" = ""
+"./generic_tictactoe_client.py" = ""
+"./generic_tictactoe_server.py" = ""
