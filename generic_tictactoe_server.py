@@ -1,5 +1,5 @@
 import socket
-from _thread import *
+from threading import Thread
 import network
 import sys
 
@@ -73,5 +73,5 @@ packet = [[0] for _ in range(10)]
 while True:
     conn, addr = s.accept()
     print("Connected to:", f'{addr[0]}:{addr[1]}', f'Player #{currentPlayer}')
-    start_new_thread(threaded_client, (conn, currentPlayer))
+    Thread(target=threaded_client, args=(conn, currentPlayer)).run()
     currentPlayer += 1
