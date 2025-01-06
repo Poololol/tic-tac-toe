@@ -1,9 +1,7 @@
 name = "Tic-tac-toe"
 description = "A simple application to run tic-tac-toe"
 
-[files]
-"./generic_tictactoe_client.py" = ""
-"./generic_tictactoe_server.py" = ""
+
 
 packages = ["pygame", "socket", "_thread", "sys", "math"]
 
