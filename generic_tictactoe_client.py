@@ -1,6 +1,6 @@
 # https://www.desmos.com/calculator/uqiamamlwm
 
-import pygame
+import pygame-ce
 import utils
 import network
 import math
