@@ -3,7 +3,7 @@ description = "A simple application to run tic-tac-toe"
 
 
 
-packages = ["pygame-ce", "socket", "threading", "sys", "math"]
+#packages = ["pygame-ce", "socket", "threading", "sys", "math"]
 
 [[fetch]]
 files = ["./generic_tictactoe_client.py", "./generic_tictactoe_server.py", "./utils.py"]
