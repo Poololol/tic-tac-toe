@@ -1,5 +1,8 @@
 name = "Tic-tac-toe"
 description = "A simple application to run tic-tac-toe"
 
+packages = ["pygame-ce"]
+force_reload = true
+
 [[fetch]]
 files = ["./generic_tictactoe_client.py", "./generic_tictactoe_server.py", "./utils.py", "./network.py"]
