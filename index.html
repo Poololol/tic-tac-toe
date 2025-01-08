@@ -22,8 +22,6 @@
             let pyodide = await loadPyodide();
             await pyodide.loadPackage("micropip");
             const micropip = pyodide.pyimport("micropip");
-            await micropip.install("pygame-ce");
-            await pyodide.loadPackage("pygame-ce");
         }
         main();
     </script>
