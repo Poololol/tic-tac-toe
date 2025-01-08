@@ -1,7 +1,7 @@
 # https://www.desmos.com/calculator/uqiamamlwm
 import asyncio
 
-async def main():
+async def main1():
     import pygame
     import utils
     import network
