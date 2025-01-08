@@ -3,26 +3,6 @@ from threading import Thread
 import network
 import sys
 
-print('To use a custom IP use --ip [ip]')
-args = sys.argv
-if '--ip' in args:
-    server = args[args.index('--ip')+1] 
-    print(f"Used User IP: {server}\n")
-elif '--debug' in args:
-    debug = True
-else:
-    debug = False
-    server = network.defaultIP
-    print(f"Used Default IP {server}\n")
-
-port = 5555
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-try:
-    s.bind((server, port))
-except socket.error as e:
-    print(str(e))
-s.listen()
-print("Waiting for a connection, Server Started\n")
 
 def decodeReply(reply: str) -> list[float]:
     '''
@@ -65,13 +45,34 @@ def threaded_client(conn: socket.socket, player):
     print(f"Lost connection: Client #{player} Closed\n")
     conn.close()
     currentPlayer -= 1
-
-currentPlayer = 0
-prevCurrentPlayer = 0
-packet = [[0] for _ in range(10)]
-
-while True:
-    conn, addr = s.accept()
-    print("Connected to:", f'{addr[0]}:{addr[1]}', f'Player #{currentPlayer}')
-    Thread(target=threaded_client, args=(conn, currentPlayer)).run()
-    currentPlayer += 1
+async def main2():
+    currentPlayer = 0
+    prevCurrentPlayer = 0
+    packet = [[0] for _ in range(10)]
+    
+    print('To use a custom IP use --ip [ip]')
+    args = sys.argv
+    if '--ip' in args:
+        server = args[args.index('--ip')+1] 
+        print(f"Used User IP: {server}\n")
+    elif '--debug' in args:
+        debug = True
+    else:
+        debug = False
+        server = network.defaultIP
+        print(f"Used Default IP {server}\n")
+    
+    port = 5555
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        s.bind((server, port))
+    except socket.error as e:
+        print(str(e))
+    s.listen()
+    print("Waiting for a connection, Server Started\n")
+    
+    while True:
+        conn, addr = s.accept()
+        print("Connected to:", f'{addr[0]}:{addr[1]}', f'Player #{currentPlayer}')
+        Thread(target=threaded_client, args=(conn, currentPlayer)).run()
+        currentPlayer += 1
