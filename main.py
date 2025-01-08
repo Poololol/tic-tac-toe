@@ -1,5 +1,6 @@
 import asyncio
 async def main():
+    await micropip.install("pygame-ce")
     import generic_tictactoe_client as client
     import generic_tictactoe_server as server
     import pygame
