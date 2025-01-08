@@ -6,6 +6,11 @@ async def main():
     import generic_tictactoe_client as client
     import generic_tictactoe_server as server
     import pygame
+
+    # Set Pygame's rendering to webgl
+    import os
+    os.environ["SDL_RENDER_DRIVER"] = "webgl"
+
     
     screen = pygame.display.set_mode((500, 500))
     clock = pygame.time.Clock()
