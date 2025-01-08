@@ -16,7 +16,8 @@
     <!-- This script tag bootstraps PyScript -->
     <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
 
-    <script type="module">
+    <script type="text/javascript">
+        let pyodide = await loadPyodide();
         await pyodide.loadPackage("micropip");
         const micropip = pyodide.pyimport("micropip");
     </script>
