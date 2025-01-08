@@ -52,7 +52,7 @@ async def main():
                         pygame.display.update()
                         clock.tick(60)
                     pygame.display.quit()
-                    server.main(ip)
+                    server.main2(ip)
                 else:
                     client.main1()
         pygame.display.update()
