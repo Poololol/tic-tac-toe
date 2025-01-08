@@ -17,9 +17,12 @@
     <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
 
     <script type="text/javascript">
-        let pyodide = await loadPyodide();
-        await pyodide.loadPackage("micropip");
-        const micropip = pyodide.pyimport("micropip");
+        async function main() {
+            let pyodide = await loadPyodide();
+            await pyodide.loadPackage("micropip");
+            const micropip = pyodide.pyimport("micropip");
+        }
+        main();
     </script>
     
     <!-- for splashscreen -->
@@ -42,7 +45,7 @@
     
     <nav class="navbar" style="background-color: #000000">
         <div class="app-header">
-            <a class="title" href="" style="color: #f0ab3c">Tic-tac-toe v0.3.3</a>
+            <a class="title" href="" style="color: #f0ab3c">Tic-tac-toe v0.3.4</a>
         </div>
     </nav>
     
