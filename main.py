@@ -10,6 +10,7 @@ async def main():
     # Set Pygame's rendering to webgl
     import os
     os.environ["SDL_RENDER_DRIVER"] = "webgl"
+    os.environ["SDL_VIDEO_X11_WMCLASS"] = "pygame-ce"
     print("Changed mode to webgl")
     
     screen = pygame.display.set_mode((500, 500), flags=pygame.OPENGL)
