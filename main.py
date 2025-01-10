@@ -7,18 +7,22 @@ async def main():
     import generic_tictactoe_server as server
     import pygame
 
+    # Initialize pygame separately
+    pygame.init()
+    print("Initialized Pygame")
+        
     # Set Pygame's rendering to webgl
     import os
     os.environ["SDL_RENDER_DRIVER"] = "webgl"
     print("Changed mode to webgl")
     os.environ["SDL_VIDEO_X11_WMCLASS"] = "pygame-ce"
-    print("Give render control to pygame")
+    print("Gave render control to pygame")
     canvas_id = 'pygame-canvas'
     os.environ["SDL_WINDOWID"] = f"#{{canvas_id}}"
-    print("Changew window to canvas")
+    print("Changed pygame window to canvas")
     
-    screen = pygame.display.set_mode((500, 500), flags=pygame.OPENGL)
-    print("Screen Inited")
+    screen = pygame.display.set_mode((500, 500))
+    print("Screen Inited w/o opengl")
     clock = pygame.time.Clock()
     font = pygame.font.Font(None, 50)
     
