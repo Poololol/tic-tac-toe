@@ -10,12 +10,12 @@ async def main():
     # Set Pygame's rendering to webgl
     import os
     os.environ["SDL_RENDER_DRIVER"] = "webgl"
-    print(f"Changed mode to webgl: {os.erviron["SDL_RENDER_DRIVER"]}")
+    print(f"Changed mode to webgl: {os.environ["SDL_RENDER_DRIVER"]}")
     os.environ["SDL_VIDEO_X11_WMCLASS"] = "pygame-ce"
-    print(f"Gave render control to pygame: {os.erviron["SDL_VIDEO_X11_WMCLASS"]}")
+    print(f"Gave render control to pygame: {os.environ["SDL_VIDEO_X11_WMCLASS"]}")
     canvas_id = 'pygame-canvas'
     os.environ["SDL_WINDOWID"] = f"#{{canvas_id}}"
-    print(f"Changed pygame window to canvas: {os.erviron["SDL_WINDOWID"]}")
+    print(f"Changed pygame window to canvas: {os.environ["SDL_WINDOWID"]}")
         
     # Initialize pygame separately
     pygame.init()
