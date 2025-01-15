@@ -1,7 +1,7 @@
 name = "Tic-tac-toe"
 description = "A simple application to run tic-tac-toe"
 
-packages = ["pygame-ce"]
+packages = ["pygame-ce", "sdl2"]
 force_reload = true
 
 [[fetch]]
