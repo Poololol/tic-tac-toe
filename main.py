@@ -14,7 +14,7 @@ async def main():
     os.environ["SDL_VIDEO_X11_WMCLASS"] = "pygame-ce"
     print(f"Gave render control to pygame: {os.environ["SDL_VIDEO_X11_WMCLASS"]}")
     canvas_id = 'pygame-canvas'
-    os.environ["SDL_WINDOWID"] = f"#{{canvas_id}}"
+    os.environ["SDL_WINDOWID"] = f"#{canvas_id}"
     print(f"Changed pygame window to canvas: {os.environ["SDL_WINDOWID"]}")
         
     # Initialize pygame separately
